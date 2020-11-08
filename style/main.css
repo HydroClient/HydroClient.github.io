@@ -1,0 +1,95 @@
+body {
+    color: var(--text);
+    background: var(--background);
+    }
+
+    ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    isolation: isolate;
+    }
+
+    li {
+    float: left;
+    }
+
+    li a {
+    transition: 0.3s;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 16px;
+    text-decoration: none;
+    isolation: isolate;
+    }
+
+    li a:hover:not(.active) {
+    background-color: #111;
+    isolation: isolate;
+    }
+
+    .active {
+    background-color: #4CAF50;
+    isolation: isolate;
+    }
+
+    .downloadnavbtn{
+        position: absolute;
+        right: 425px;
+        isolation: isolate;
+    }
+
+    .contactnavbtn{
+        position: absolute;
+        right: 535px;
+        isolation: isolate;
+    }
+
+    .aboutnavbtn{
+        position: absolute;
+        right: 630px;
+        isolation: isolate;
+    }
+
+    .changelognavbtn{
+        position: absolute;
+        right: 715px;
+        isolation: isolate;
+    }
+
+    .customfont{
+        isolation: isolate;
+        font-size: 3.2rem;
+        color: white;
+        text-decoration: none;
+    }
+
+    /* The alert message box */
+    .alert {
+    padding: 20px;
+    background-color: #3fb2d9; /* Blue */
+    color: white;
+    margin-bottom: 15px;
+    isolation: isolate;
+    }
+
+    /* The close button */
+    .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    isolation: isolate;
+    }
+
+    /* When moving the mouse over the close button */
+    .closebtn:hover {
+    color: black;
+    }

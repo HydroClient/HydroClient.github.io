@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+    function addDarkmodeWidget() {
+        new Darkmode().showWidget();
+    }
+    window.addEventListener('load', addDarkmodeWidget);
+    </script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/style/main.css">
+    <style>
+   CustomBtn {
+	 position: relative;
+	 display: inline-block;
+	 padding: 1.2em 2em;
+	 text-decoration: none;
+	 text-align: center;
+	 cursor: pointer;
+	 user-select: none;
+	 color: white;
+    }
+    CustomBtn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(135deg, #6e8efb, #a777e3);
+        border-radius: 4px;
+        transition: box-shadow 0.5s ease, transform 0.2s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    }
+    CustomBtn:hover::before {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
+    }
+    CustomBtn::after {
+        position: relative;
+        display: inline-block;
+        content: attr(data-title);
+        font-weight: bold;
+        letter-spacing: 0.01em;
+    }
+  </style>
+</head>
+<body>
+
+    <ul>
+        <li class="changelognavbtn"><a href="/updates/DemoHax-1.0">ChangeLog</a></li>
+        <li class="downloadnavbtn"><a href="/Downloads/">Downloads</a></li>
+        <li class="contactnavbtn"><a href="#">Contact</a></li>
+        <li class="aboutnavbtn"><a href="/about/">About</a></li>
+        <a class="customfont" href="https://demohax.github.io">
+                <span style='color: #f24441'>Demo</span>
+                <span style='color: #4287f5'>Hax</span>
+        </a>
+    </ul>
+
+    <center><h1 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">DemoHax Client Downloads</h1></center>
+    <hr style="width: 40%;">
+    <center><h1 style="font-family: sans-serif;">DemoHax Client Version 1.0 | <a href="/files/DemoHax.zip"><CustomBtn data-title="Download"></CustomBtn></a>    </h1></center>
+    <hr style="width: 50%;">
+    <script>
+        const docStyle = document.documentElement.style
+        const aElem = document.querySelector('a')
+        const boundingClientRect = aElem.getBoundingClientRect()
+
+        aElem.onmousemove = function(e) {
+
+            const x = e.clientX - boundingClientRect.left
+            const y = e.clientY - boundingClientRect.top
+            
+            const xc = boundingClientRect.width/2
+            const yc = boundingClientRect.height/2
+            
+            const dx = x - xc
+            const dy = y - yc
+            
+            docStyle.setProperty('--rx', `${ dy/-1 }deg`)
+            docStyle.setProperty('--ry', `${ dx/10 }deg`)
+            
+        }
+
+        aElem.onmouseleave = function(e) {
+            
+            docStyle.setProperty('--ty', '0')
+            docStyle.setProperty('--rx', '0')
+            docStyle.setProperty('--ry', '0')
+            
+        }
+
+        aElem.onmousedown = function(e) {
+            
+            docStyle.setProperty('--tz', '-25px')
+            
+        }
+
+        document.body.onmouseup = function(e) {
+            
+            docStyle.setProperty('--tz', '-12px')
+            
+        }
+    </script>
+
+</body>
+</html>
